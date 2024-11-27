@@ -1,0 +1,27 @@
+<h1>Liste des Restaurants</h1>
+
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Catégorie</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+ <tbody>
+  <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.name %></td>
+      <td><%= restaurant.category %></td>
+      <td>
+        <%= link_to restaurant_path(restaurant), class: 'btn btn-outline-dark' do %>
+          <i class="fa-sharp-duotone fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+
+
+</table>

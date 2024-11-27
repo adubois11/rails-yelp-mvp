@@ -1,0 +1,6 @@
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating, label: 'Note' %>
+  <%= f.input :content, label: 'Commentaire' %>
+  <%= f.button :submit, "Ajouter l'avis", class: 'btn btn-outline-dark' %>
+  <%= link_to 'Retour', @restaurant, class: 'btn btn-outline-secondary' %>
+<% end %>

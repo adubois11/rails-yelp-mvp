@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %></h1>
+<p><strong>Adresse</strong> : <%= @restaurant.address %></p>
+<p><strong>Numéro de téléphone</strong> : <%= @restaurant.phone_number %></p>
+<p><strong>Catégorie</strong> : <%= @restaurant.category %></p>
+
+<h2>Avis :</h2>
+
+<%= render @restaurant.reviews %> <!-- Affiche tous les avis associés au restaurant -->
+<%= link_to new_restaurant_review_path(@restaurant), class: 'btn btn-outline-dark' do %>
+  <i class="fa fa-plus"></i> Ajouter un avis
+<% end %>
+<%= link_to restaurants_path, class: 'btn btn-outline-secondary' do %>
+  <i class="fa fa-list"></i> Retour
+<% end %>
