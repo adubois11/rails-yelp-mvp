@@ -9,6 +9,7 @@
 <%= link_to new_restaurant_review_path(@restaurant), class: 'btn btn-outline-dark' do %>
   <i class="fa fa-plus"></i> Ajouter un avis
 <% end %>
-<%= link_to restaurants_path, class: 'btn btn-outline-secondary' do %>
-  <i class="fa fa-list"></i> Retour
-<% end %>
+
+
+
+<%= render 'reviews/form' %>

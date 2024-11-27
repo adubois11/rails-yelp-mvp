@@ -1,6 +1,17 @@
-<%= simple_form_for [@restaurant, @review] do |f| %>
-  <%= f.input :rating, label: 'Note' %>
-  <%= f.input :content, label: 'Commentaire' %>
-  <%= f.button :submit, "Ajouter l'avis", class: 'btn btn-outline-dark' %>
-  <%= link_to 'Retour', @restaurant, class: 'btn btn-outline-secondary' %>
+<!-- Formulaire pour laisser un avis -->
+
+<%= simple_form_for [@restaurant, @restaurant.reviews.build] do |f| %>
+  <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5], prompt: "Choisir une note (0 à 5)", label: "Note" %>
+  <%= f.input :content, as: :text, label: "Contenu" %>
+  <%= button_tag type: 'submit', class: "btn btn-outline-dark" do %>
+      <i class="fa fa-plus" >Ajouter un avis</i>
+  <% end %>
+  <%= link_to restaurants_path, class: 'btn btn-outline-secondary' do %>
+  <i class="fa fa-list"></i> Retour
 <% end %>
+<% end %>
+
+
+<div class="small-3 columns">
+
+</div>
